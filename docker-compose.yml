@@ -1,0 +1,30 @@
+version: '3.9'
+
+services:
+  flaskapp:
+    container_name: flaskapp
+    image: flaskapp
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - DATABASE_URL=postgresql://osho:secret@db:5433/osho
+      - PYTHONUNBUFFERED=1
+    depends_on:
+      - database
+  
+  database:
+    container_name: database-container
+    image: postgres:12
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+    volumes:
+      - pgdatabase:/var/lib/postgresql/data
+
+
+volumes:
+  pgdatabase: {}
