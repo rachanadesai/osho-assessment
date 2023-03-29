@@ -9,11 +9,6 @@ import os
 
 app = Flask(__name__)
 
-@app.route('/')
-def hello_world():
-    return '<h1>Hello Osho</h2>'
-
-print("------ In OSHO ---------");
 
 # connect to Postgresql Database
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
