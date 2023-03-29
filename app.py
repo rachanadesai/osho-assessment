@@ -53,6 +53,7 @@ db.create_all()
 @app.route('/api/devices/<device_id>', methods=['GET'])
 def get_device_by_id(device_id):
     devices_configs = []
+    # TODO: add pagination if the records are more
     devices = db.session.query(Devices).filter_by(device_id=device_id).order_by(desc(Devices.updated_at)).all()
     if not devices:
         # TODO: Improve error handlimg

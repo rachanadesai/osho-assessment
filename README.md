@@ -49,7 +49,7 @@ race condition
 
 ### Implementations
 
-Type of IoT devie is more generic.
+Type of IoT device is more generic.
 This implementation includes two API endpoints:
 
 * An HTTP GET endpoint that retrieves the current configuration and all previous configurations for a given device id
@@ -65,7 +65,8 @@ The implementation uses PostgreSQL to store the configurations.
 ### Testing
 
 * POST API
-    ```curl --request POST \
+    ```
+    curl --request POST \
   --url http://localhost:8080/api/devices/621 \
   --header 'Content-Type: application/json' \
   --data '{
@@ -75,10 +76,12 @@ The implementation uses PostgreSQL to store the configurations.
 			"brightness": "daylight",
 			"temparature": 5000
 		}
-    }'```
+    }'
+    ```
 
 * GET API
-    ```curl --request GET \
+    ```
+    curl --request GET \
   --url http://localhost:8080/api/devices/1234
   ```
 
