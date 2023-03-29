@@ -8,6 +8,5 @@ CONFIG_SCHEMA = {
 
 REQUEST_PAYLOAD = {
     "device_name": str,
-    "config": CONFIG_SCHEMA,
-    "timestamp": str
+    "config": CONFIG_SCHEMA
 }
