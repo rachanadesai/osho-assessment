@@ -95,3 +95,6 @@ def update_device_by_id(device_id):
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+# TODO: add github workflow for code check - linting, syntax error
+# TODO: Unit tests    
